@@ -1,94 +1,84 @@
 * {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }
-/* layout for overall structure */
+
 body {
-	display: grid;
-	grid-template-rows: 10fr 3fr;
-	min-height: 100vh;
-}
-
-main {
-	min-height: 150vh;
-	grid-row: 1/2;
-	background-color: yellow;
-}
-
-footer {
-	grid-row: 2/3;
-}
-
-/* layout for inside main */
-main {
-	display: grid;
-	grid-template-rows: 3fr 5fr;
-}
-
-.about-me {
-	grid-row: 1/2;
-	background-color: aliceblue;
-}
-
-.my-work {
-	grid-row: 2/3;
-	background-color: aqua;
-}
-
-/* layout for about-me */
-.about-me {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0px 100px;
-	margin-top: 50px;
-	min-width: 800px;
+	flex-direction: column;
 }
-
-.about-me img {
-	max-width: 800px;
-}
-
-.about-me-content {
-	background-color: aqua;
-	max-width: 600px;
-}
-
-/* layout for my-work */
-.my-work {
+main {
+	flex: 1;
+	min-height: 100%;
+	background-color: grey;
 	display: flex;
 	flex-direction: column;
 }
 
-.my-work h1 {
-	/* transform: translateX(-105px); */
+footer {
+
+	width: 100%;
+	background-color: rgb(76, 76, 76);
+}
+
+/* ================= About me ================= */
+
+.about-me {
+	background-color: antiquewhite;
+	display: flex;
+	align-items: center;
+	padding: 0px 10%;
+	min-width: 900px;
+}
+
+.about-me h1 {
+	padding-bottom: 1rem;
+}
+
+.about-me-content {
+	background-color: white;
+	font-size: clamp(0.5vw, 1rem, 2rem);
+	padding: 3%;
+	line-height: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.about-me img {
+	aspect-ratio: 1/1;
+	max-width: min(30rem, 40%);
+	height: auto;
+	padding: 30px 0px;
+}
+
+.socials {
+	display: flex;
+	gap: 10px;
+	padding-top: 1rem;
+}
+
+/* ================= My Work ================= */
+.my-work {
+	background-color: white;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 }
 
 .project-container {
-	background-color: black;
+	flex: 1;
+	background-color: aqua;
 	display: grid;
-	padding: 0px 100px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 25%));
 	gap: 50px;
-
-	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	padding: 0px 100px;
 }
 
-.project-container div {
-	background-color: white;
-	aspect-ratio: 1 / 1;
+.project {
+	background-color: rgb(255, 232, 232);
+	aspect-ratio: 1/1;
 }
 
-@media (max-width: 600px) {
-	* {
-		margin: 0px;
-		padding: 0px;
-	}
 
-	.about-me img {
-        width: 100%;
-    }
 
-	.about-me {
-		flex-direction: column;
-	}
-}
