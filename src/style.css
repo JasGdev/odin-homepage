@@ -1,65 +1,94 @@
 * {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 }
 /* layout for overall structure */
 body {
-    display: grid;
-    grid-template-rows: 10fr 3fr;
-    min-height: 100vh;
+	display: grid;
+	grid-template-rows: 10fr 3fr;
+	min-height: 100vh;
 }
 
 main {
-    min-height: 150vh;
-    grid-row: 1/2;
-    background-color: yellow;
+	min-height: 150vh;
+	grid-row: 1/2;
+	background-color: yellow;
 }
 
 footer {
-    grid-row: 2/3;
+	grid-row: 2/3;
 }
 
 /* layout for inside main */
 main {
-    display: grid;
-    grid-template-rows: 3fr 5fr;
+	display: grid;
+	grid-template-rows: 3fr 5fr;
 }
 
-.about-me{
-    grid-row: 1/2;
-    background-color: aliceblue;
+.about-me {
+	grid-row: 1/2;
+	background-color: aliceblue;
 }
 
-.my-work{
-    grid-row: 2/3;
-    background-color: aqua;
+.my-work {
+	grid-row: 2/3;
+	background-color: aqua;
 }
 
 /* layout for about-me */
-.about-me{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    margin: 0px 100px;
-    margin-top: 50px;
-    min-width: 800px;
+.about-me {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0px 100px;
+	margin-top: 50px;
+	min-width: 800px;
 }
 
-.about-me img{
-    background-color: rgb(0, 0, 0);
-    max-width: 40%;
+.about-me img {
+	max-width: 800px;
 }
 
-.about-me-content{
-    background-color: aqua;
-    max-width: 40%;
-    min-height: 70%;
-
+.about-me-content {
+	background-color: aqua;
+	max-width: 600px;
 }
 
 /* layout for my-work */
-.my-work{
-    margin: 50px;
+.my-work {
+	display: flex;
+	flex-direction: column;
+}
 
+.my-work h1 {
+	/* transform: translateX(-105px); */
+}
+
+.project-container {
+	background-color: black;
+	display: grid;
+	padding: 0px 100px;
+	gap: 50px;
+
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.project-container div {
+	background-color: white;
+	aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 600px) {
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.about-me img {
+        width: 100%;
+    }
+
+	.about-me {
+		flex-direction: column;
+	}
 }
